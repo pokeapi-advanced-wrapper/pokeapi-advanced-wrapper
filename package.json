@@ -1,6 +1,25 @@
 {
   "name": "pokeapi-advanced-wrapper",
-  "packageManager": "yarn@3.2.3",
+  "version": "0.0.0",
+  "author": {},
+  "contributors": [
+    "devcomfort <kimdonghyun026@gmail.com>"
+  ],
+  "repository": {
+    "type": "git",
+    "https://github.com/pokeapi-advanced-wrapper/pokeapi-advanced-wrapper"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.com"
+  },
+  "keywords": [
+    "poekapi",
+    "pokeapi-ts",
+    "advanced pokeapi",
+    "pokeapi wrapper",
+    "pokeapi-advanced-wrapper"
+  ],
   "dependencies": {
     "@types/node": "^18.11.18",
     "alanode": "^1.1.0",
