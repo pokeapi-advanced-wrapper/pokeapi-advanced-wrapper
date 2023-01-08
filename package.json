@@ -22,7 +22,7 @@
   ],
   "dependencies": {
     "@types/node": "^18.11.18",
-    "alanode": "^1.1.0",
+    "alamode": "^3.7.1",
     "node-fetch": "^3.3.0",
     "typescript": "^4.9.4"
   }
