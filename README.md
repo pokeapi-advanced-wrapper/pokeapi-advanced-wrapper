@@ -2,6 +2,22 @@
 
 The advanced version of PokéAPI.
 
+# Contents
+
+- [Usage](#usage)
+- [Task List](#task-list)
+
+# Usage
+
+```ts
+// ESM
+import { PokeAPI } from 'pokeapi-advanced-wrapper';
+import PokeAPI from 'pokeapi-advanced-wrapper';
+// CJS
+const { PokeAPI } = require("pokeapi-advanced-wrapper");
+const PokeAPI = require("pokeapi-advanced-wrapper");
+```
+
 # Task List
 
 - [ ] npm 배포 설정
