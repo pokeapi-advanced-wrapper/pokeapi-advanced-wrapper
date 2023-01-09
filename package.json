@@ -1,10 +1,11 @@
 {
   "name": "pokeapi-advanced-wrapper",
   "version": "0.0.0",
-  "author": {},
+  "author": {"name": "hmyo2853"},
   "contributors": [
     "devcomfort <kimdonghyun026@gmail.com>"
   ],
+  "license": "",
   "repository": {
     "type": "git",
     "https://github.com/pokeapi-advanced-wrapper/pokeapi-advanced-wrapper"
