@@ -29,6 +29,41 @@ interface RequestState {
 	json?: NamedAPIResourceList | Error;
 }
 
+/** Wrapper Type */
+interface Wrapper {
+	// params setter
+	/** set limit */
+	setLimit: (_limit: number) => Wrapper;
+	/** set offset */
+	setOffset: (_offset: number) => Wrapper;
+	/** 재시도 횟수 지정 */
+	setRetry: (_retry: number) => Wrapper;
+	// params getter
+	/** get limit */
+	getLimit: () => number;
+	/** get offset */
+	getOffset: () => number;
+	/** 재시도 횟수 */
+	getRetry: () => number;
+	// states
+	/** 데이터 비어있음 여부 */
+	isEmpted: () => boolean;
+	/** 요청 오류 여부 */
+	isError: () => boolean;
+	/** 데이터 유효성 */
+	isValid: () => boolean;
+	// behaviors
+	/** 데이터 요청 */
+	request: () => Promise<Wrapper>;
+	// requested results
+	/** JSON 해석 데이터 */
+	getData: () => NamedAPIResourceList | undefined;
+	/** 모든 리소스의 개수 */
+	getLength: () => number | undefined;
+	/** 리소스 리스트 */
+	getResults: () => Array<NamedAPIResource> | undefined;
+}
+
 const RequestHandler = (options?: {
 	/** 재시도 횟수 */
 	retry: number;
@@ -39,7 +74,7 @@ const RequestHandler = (options?: {
 		retry,
 	};
 
-	const wrapper = function (data: RequestState) {
+	const wrapper = function (data: RequestState): Wrapper {
 		const request = async () => {
 			const _params = data.options.toString();
 			const _request = () =>
@@ -80,38 +115,18 @@ const RequestHandler = (options?: {
 		const getResults = () => getData()?.results;
 
 		return {
-			// 파라미터 지정 함수
-			/** limit 파라미터 지정 함수 */
 			setLimit,
-			/** offset 파라미터 지정 함수 */
 			setOffset,
-			/** retry 파라미터 지정 함수 */
 			setRetry,
-
-			// 파라미터 값 호출 함수
 			getLimit,
 			getOffset,
 			getRetry,
-
-			// 유효성 함수
-			/** 비어있음 여부 함수 */
 			isEmpted,
-			/** 오류 여부 함수 */
 			isError,
-			/**
-			 * 유효성 함수.
-			 * 유효성 검사 툴은 아직 도입되지 않아 간접적으로 값을 추정합니다.
-			 */
 			isValid,
-
-			// 행동 함수
 			request,
-
-			// 데이터 호출 함수
 			getData,
-			/** 총 데이터 길이 */
 			getLength,
-			/** 데이터 결과 */
 			getResults,
 		};
 	};
