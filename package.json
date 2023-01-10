@@ -1,7 +1,10 @@
 {
   "name": "pokeapi-advanced-wrapper",
   "version": "0.0.0",
-  "author": {"name": "hmyo2853 and devcomfort"},
+  "author": {
+    "name": "hmyo2853 && devcomfort",
+    "url": "https://github.com/pokeapi-advanced-wrapper"
+  },
   "contributors": [
     "devcomfort <kimdonghyun026@gmail.com>"
   ],
