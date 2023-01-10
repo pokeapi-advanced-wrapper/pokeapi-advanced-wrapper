@@ -142,3 +142,6 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# 요청 테스트 파일
+**/*.rest
