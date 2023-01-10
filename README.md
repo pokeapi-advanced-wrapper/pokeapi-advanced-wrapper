@@ -22,7 +22,7 @@ const PokeAPI = require("pokeapi-advanced-wrapper");
 
 - [ ] 타입 추가하기
   - [x] Berries
-  - [ ] Contests
+  - [x] Contests
   - [x] Encounters
   - [ ] Evolution
   - [x] Games
