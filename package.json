@@ -5,7 +5,7 @@
   "contributors": [
     "devcomfort <kimdonghyun026@gmail.com>"
   ],
-  "license": "",
+  "license": "BSD 3-Clause",
   "repository": {
     "type": "git",
     "url": "https://github.com/pokeapi-advanced-wrapper/pokeapi-advanced-wrapper"
