@@ -1,5 +1,4 @@
 import RequestHandler from '.';
-import Joi from 'joi';
 
 test('Resources TEST', async () => {
 	// 기본값 검사
