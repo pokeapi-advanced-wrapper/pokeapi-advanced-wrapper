@@ -1,10 +1,7 @@
-import {EncounterCondition, EncounterConditionValue, EncounterMethod} from './encounter';
+import {EncounterConditionValue, EncounterMethod} from './encounter';
 import {Version, VersionGroup} from './games';
 import {Language} from './language';
-
-export {EncounterCondition, EncounterConditionValue, EncounterMethod};
-export {Language};
-
+import {Machine} from './machine';
 export interface APIResource {
 	/** The URL of the referenced resource. */
 	url: string;
