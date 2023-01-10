@@ -1,13 +1,7 @@
 import URLHandler, {Wrapper as URLHandlerWrapper} from './url-tool';
 import AsyncHandler from '../async-tool';
 import fetch from 'node-fetch';
-
-interface NamedAPIResource {
-	/** The name of the referenced resource. */
-	name: string;
-	/** The URL of the referenced resource. */
-	url: string;
-}
+import type {NamedAPIResource} from '../@types/common_types';
 
 interface NamedAPIResourceList {
 	/** The total number of resources available from this API. */
