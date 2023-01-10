@@ -24,7 +24,6 @@
     "pokeapi wrapper",
     "pokeapi-advanced-wrapper"
   ],
-  "prettier": "./.prettierrc",
   "dependencies": {
     "@types/node": "^18.11.18",
     "alamode": "^3.7.1",
