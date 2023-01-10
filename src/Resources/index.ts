@@ -23,17 +23,17 @@ interface NamedAPIResourceList {
 interface RequestState {
 	/** URLHandler Wrapper Closure Type */
 	options: URLHandlerWrapper;
+	/** 재시도 횟수 */
 	retry: number;
 	/** 요청 결과 */
 	json?: NamedAPIResourceList | Error;
 }
 
-const RequestHandler = ({
-	retry = 5,
-}: {
+const RequestHandler = (options?: {
 	/** 재시도 횟수 */
 	retry: number;
 }) => {
+	const {retry = 5} = options || {};
 	const data: RequestState = {
 		options: URLHandler(),
 		retry,
@@ -62,8 +62,14 @@ const RequestHandler = ({
 			return wrapper(data);
 		};
 
+		const setRetry = (_retry: number) => {
+			data.retry = _retry;
+			return wrapper(data);
+		};
+
 		const getLimit = () => data.options.getLimit();
 		const getOffset = () => data.options.getOffset();
+		const getRetry = () => data.retry;
 
 		const isEmpted = () => !data.json;
 		const isError = () => data.json instanceof Error;
@@ -79,10 +85,13 @@ const RequestHandler = ({
 			setLimit,
 			/** offset 파라미터 지정 함수 */
 			setOffset,
+			/** retry 파라미터 지정 함수 */
+			setRetry,
 
 			// 파라미터 값 호출 함수
 			getLimit,
 			getOffset,
+			getRetry,
 
 			// 유효성 함수
 			/** 비어있음 여부 함수 */
