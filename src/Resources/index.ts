@@ -134,6 +134,17 @@ const RequestHandler = (options?: {
 	return wrapper(data);
 };
 
+/** 모든 리소스 데이터 불러오기 */
+const getAllResources = async () =>
+	RequestHandler()
+		.request()
+		.then((res) => {
+			const _length = res.getLength();
+			if (!_length) throw new Error(`데이터 호출 실패`);
+			return _length;
+		})
+		.then((_length) => RequestHandler().setLimit(_length).setOffset(0).request());
+
 export type {NamedAPIResource, NamedAPIResourceList};
-export {RequestHandler as ResourcesList};
+export {RequestHandler as ResourcesList, getAllResources};
 export default RequestHandler;
