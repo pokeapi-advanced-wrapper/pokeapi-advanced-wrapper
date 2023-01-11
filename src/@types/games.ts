@@ -1,5 +1,7 @@
 import {Description, Name} from './common_types';
 import {Region} from './location';
+import {MoveLearnMethod} from './Moves';
+import {PokemonSpecies} from './pokemon';
 
 export interface Pokedex {
 	/** The identifier for this resource. */

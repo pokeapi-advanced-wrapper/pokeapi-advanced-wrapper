@@ -1,4 +1,5 @@
 import {APIResource, Description, MachineVersionDetail, Name, NamedAPIResource, VerboseEffect} from './common_types';
+import {AbilityEffectChange} from './pokemon';
 
 export interface Move {
 	/** The identifier for this resource. */

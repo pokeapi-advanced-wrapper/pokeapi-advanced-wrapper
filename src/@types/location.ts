@@ -1,6 +1,7 @@
 import {GenerationGameIndex, Name, VersionEncounterDetail} from './common_types';
 import {EncounterMethod} from './encounter';
 import {Version, Pokedex, VersionGroup} from './games';
+import {Pokemon, PokemonSpecies} from './pokemon';
 
 export interface Location {
 	/** The identifier for this resource. */
