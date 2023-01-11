@@ -1,4 +1,4 @@
-import {Description, Effect, Name, NamedAPIResource, VerboseEffect} from './common_types';
+import {Description, Effect, Name, NamedAPIResource, VerboseEffect, VersionGameIndex} from './common_types';
 
 export interface Abilities {
 	/** The identifier for this resource. */
@@ -111,3 +111,105 @@ export interface GrowthRateExperienceLevel {
 }
 
 /** Natures */
+export interface Nature {
+	/** The identifier for this resource. */
+	id: number;
+	/** The name for this resource. */
+	name: string;
+	/** The stat decreased by 10% in Pokémon with this nature. */
+	decreased_stat: NamedAPIResource;
+	/** The stat increased by 10% in Pokémon with this nature. */
+	increased_stat: NamedAPIResource;
+	/** The flavor hated by Pokémon with this nature. */
+	hates_flavor: NamedAPIResource;
+	/** The flavor liked by Pokémon with this nature */
+	likes_flavor: NamedAPIResource;
+	/** A list of Pokéathlon stats this nature effects and how much it effects them. */
+	pokeathlon_stat_changes: Array<NatureStatChange>;
+	/** A list of battle styles and how likely a Pokémon with this nature is to use them in the Battle Palace or Battle Tent. */
+	move_battle_style_preferences: Array<MoveBattleStylePreference>;
+	/** The name of this resource listed in different languages. */
+	names: Array<Name>;
+}
+
+export interface NatureStatChange {
+	/** The amount of change. */
+	max_change: number;
+	/** The stat being affected. */
+	pokeathlon_stat: NamedAPIResource;
+}
+
+export interface MoveBattleStylePreference {
+	/** Chance of using the move, in percent, if HP is under one half. */
+	low_hp_preference: number;
+	/** Chance of using the move, in percent, if HP is over one half. */
+	high_hp_preference: number;
+	/** The move battle style. */
+	move_battle_style: NamedAPIResource;
+}
+
+/** Pokeathlon Stats */
+export interface PokeathlonStat {
+	/** The identifier for this resource. */
+	id: number;
+	/** The name for this resource. */
+	name: string;
+	/** The name of this resource listed in different languages. */
+	names: Array<Name>;
+	/** A detail of natures which affect this Pokéathlon stat positively or negatively. */
+	affecting_natures: NaturePokeathlonStatAffectSets;
+}
+
+export interface NaturePokeathlonStatAffectSets {
+	/** A list of natures and how they change the referenced Pokéathlon stat. */
+	increase: Array<NaturePokeathlonStatAffect>;
+	/** A list of natures and how they change the referenced Pokéathlon stat. */
+	decrease: Array<NaturePokeathlonStatAffect>;
+}
+
+export interface NaturePokeathlonStatAffect {
+	/** The maximum amount of change to the referenced Pokéathlon stat. */
+	max_change: number;
+	/** The nature causing the change. */
+	nature: NamedAPIResource;
+}
+
+/** Pokemon  */
+export interface Pokemon {
+	/** The identifier for this resource. */
+	id: number;
+	/** The name for this resource. */
+	name: string;
+	/** The base experience gained for defeating this Pokémon. */
+	base_experience: number;
+	/** The height of this Pokémon in decimetres. */
+	height: number;
+	/** Set for exactly one Pokémon used as the default for each species. */
+	is_default: boolean;
+	/** Order for sorting. Almost national order, except families are grouped together. */
+	order: number;
+	/** The weight of this Pokémon in hectograms. */
+	weight: number;
+	/** A list of abilities this Pokémon could potentially have. */
+	abilities: Array<PokemonAbility>;
+	/** A list of forms this Pokémon can take on. */
+	forms: Array<NamedAPIResource>;
+	/** A list of game indices relevent to Pokémon item by generation. */
+	game_indices: Array<VersionGameIndex>;
+	/** A list of items this Pokémon may be holding when encountered. */
+	held_items: Array<PokemonHeldItem>;
+	/** A link to a list of location areas, as well as encounter details pertaining to specific versions. */
+	location_area_encounters: string;
+	/** A list of moves along with learn methods and level details pertaining to specific version groups. */
+	moves: Array<PokemonMove>;
+	/** A list of details showing types this pokémon had in previous generations */
+	past_types: Array<PokemonTypePast>;
+	/** A set of sprites used to depict this Pokémon in the game. A visual representation of the various sprites can be found at PokeAPI/sprites */
+	sprites: PokemonSprites;
+	/** The species this Pokémon belongs to. */
+	species: NamedAPIResource;
+	/** A list of base stat values for this Pokémon. */
+	stats: Array<PokemonStat>;
+	/** A list of details showing types this Pokémon has. */
+	types: Array<PokemonType>;
+}
