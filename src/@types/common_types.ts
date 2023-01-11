@@ -2,6 +2,7 @@ import {EncounterConditionValue, EncounterMethod} from './encounter';
 import {Version, VersionGroup} from './games';
 import {Language} from './language';
 import {Machine} from './machine';
+
 export interface APIResource {
 	/** The URL of the referenced resource. */
 	url: string;
@@ -10,6 +11,7 @@ export interface APIResource {
 export interface Description {
 	/** The localized description for an API resource in a specific language. */
 	description: string;
+	/** The language this name is in. */
 	language: Language;
 }
 
@@ -57,7 +59,6 @@ export interface GenerationGameIndex {
 
 export interface MachineVersionDetail {
 	/** The machine that teaches a move from an item. */
-	/** @todo */
 	machine: Machine;
 	/** The version group of this specific machine. */
 	version_group: VersionGroup;

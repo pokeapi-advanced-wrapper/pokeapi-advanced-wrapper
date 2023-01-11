@@ -1,4 +1,5 @@
 import {GenerationGameIndex, Name, VersionEncounterDetail} from './common_types';
+import {EncounterMethod} from './encounter';
 import {Version, Pokedex, VersionGroup} from './games';
 
 export interface Location {
@@ -29,6 +30,7 @@ export interface LocationArea {
 	location: Location;
 	/** The name of this resource listed in different languages. */
 	names: Array<Name>;
+	/** A list of Pokémon that can be encountered in this area along with version specific details about the encounter. */
 	pokemon_encounters: Array<PokemonEncounter>;
 }
 
@@ -74,11 +76,18 @@ export interface PalParkEncounterSpecies {
 }
 
 export interface Region {
+	/** The identifier for this resource. */
 	id: number;
+	/** A list of locations that can be found in this region. */
 	locations: Array<Location>;
+	/** The name for this resource. */
 	name: string;
+	/** The name of this resource listed in different languages. */
 	names: Array<Name>;
+	/** The generation this region was introduced in. */
 	main_generation: Generation;
+	/** A list of pokédexes that catalogue Pokémon in this region. */
 	pokedexes: Array<Pokedex>;
+	/** A list of version groups where this region can be visited. */
 	version_groups: Array<VersionGroup>;
 }

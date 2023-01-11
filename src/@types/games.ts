@@ -29,9 +29,13 @@ export interface PokemonEntry {
 }
 
 export interface Version {
+	/** The identifier for this resource. */
 	id: number;
+	/** The name for this resource. */
 	name: string;
+	/** The name of this resource listed in different languages. */
 	names: Array<Name>;
+	/** The version group this version belongs to. */
 	version_group: Array<VersionGroup>;
 }
 
@@ -51,7 +55,6 @@ export interface VersionGroup {
 	/** A list of Pokédexes introduces in this version group. */
 	pokedexes: Array<Pokedex>;
 	/** A list of regions that can be visited in this version group. */
-	/** @todo */
 	regions: Array<Region>;
 	/** The versions this version group owns. */
 	versions: Array<Version>;

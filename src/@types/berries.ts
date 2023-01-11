@@ -1,4 +1,5 @@
 import {Name} from './common_types';
+import {ContestType} from './contests';
 
 export interface Berry {
 	/** The identifier for this resource. */
@@ -42,9 +43,13 @@ export interface BerryFlavorMap {
 
 /** Berry Firmnesses */
 export interface BerryFirmness {
+	/** The identifier for this resource. */
 	id: number;
+	/** The name for this resource. */
 	name: string;
+	/** A list of the berries with this firmness. */
 	berries: Array<Berry>;
+	/** The name of this resource listed in different languages. */
 	names: Array<Name>;
 }
 
