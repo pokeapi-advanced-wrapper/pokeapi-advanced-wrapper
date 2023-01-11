@@ -1,4 +1,5 @@
 import {Description, Name} from './common_types';
+import {Region} from './location';
 
 export interface Pokedex {
 	/** The identifier for this resource. */

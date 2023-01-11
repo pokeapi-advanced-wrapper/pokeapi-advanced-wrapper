@@ -20,6 +20,20 @@ const PokeAPI = require("pokeapi-advanced-wrapper");
 
 # Task List
 
+- [ ] 타입 추가하기
+  - [x] Berries
+  - [x] Contests
+  - [x] Encounters
+  - [ ] Evolution
+  - [x] Games
+  - [ ] Items
+  - [x] Locations
+  - [x] Machines
+  - [ ] Moves
+  - [ ] Pokemon
+  - [x] Utility
+    - [x] Languages
+    - [x] Common Models
 - [ ] npm 배포 설정
 - [ ] alamode를 통한 ESM, CJS 지원
 - [ ] Berries 지원 추가하기
