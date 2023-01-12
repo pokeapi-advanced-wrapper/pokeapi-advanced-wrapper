@@ -1,5 +1,5 @@
 import URLHandler, {Wrapper as URLHandlerWrapper} from './url-tool';
-import AsyncHandler from '../async-tool';
+import AsyncHandler from '../common-lib/async-tool';
 import fetch from 'node-fetch';
 import type {NamedAPIResource} from '../@types/common_types';
 
