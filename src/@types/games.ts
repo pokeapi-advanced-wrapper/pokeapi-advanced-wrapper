@@ -1,7 +1,28 @@
-import {Description, Name} from './common_types';
+import {Description, Name, NamedAPIResource} from './common_types';
 import {Region} from './location';
-import {MoveLearnMethod} from './Moves';
+import {MoveLearnMethod} from './moves';
 import {PokemonSpecies} from './pokemon';
+
+export interface Generation {
+	/** The identifier for this resource. */
+	id: number;
+	/** The name for this resource. */
+	name: string;
+	/** A list of abilities that were introduced in this generation. */
+	abilities: Array<NamedAPIResource>;
+	/** A list of abilities that were introduced in this generation. */
+	names: Array<Name>;
+	/** The main region travelled in this generation. */
+	main_region: NamedAPIResource;
+	/** A list of moves that were introduced in this generation. */
+	moves: Array<NamedAPIResource>;
+	/** A list of Pokémon species that were introduced in this generation. */
+	pokemon_species: Array<NamedAPIResource>;
+	/** A list of types that were introduced in this generation. */
+	types: Array<NamedAPIResource>;
+	/** A list of version groups that were introduced in this generation. */
+	version_groups: Array<NamedAPIResource>;
+}
 
 export interface Pokedex {
 	/** The identifier for this resource. */

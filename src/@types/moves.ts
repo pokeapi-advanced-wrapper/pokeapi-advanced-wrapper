@@ -177,10 +177,15 @@ export interface MoveDamageClass {
 
 /** Move Learn Methods */
 export interface MoveLearnMethod {
+	/** The identifier for this resource. */
 	id: number;
+	/** The name for this resource. */
 	name: string;
+	/** The description of this resource listed in different languages. */
 	descriptions: Array<Description>;
+	/** The name of this resource listed in different languages. */
 	names: Array<Name>;
+	/** A list of version groups where moves can be learned through this method. */
 	version_groups: Array<NamedAPIResource>;
 }
 
