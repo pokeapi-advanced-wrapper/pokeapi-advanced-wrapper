@@ -1,7 +1,7 @@
 import {BerryFlavor} from './berries';
 import {Language} from './language';
 import {Effect, FlavorText} from './common_types';
-import {Move} from './Moves';
+import {Move} from './moves';
 
 /** Contest Types */
 export interface ContestType {

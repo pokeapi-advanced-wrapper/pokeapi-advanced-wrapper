@@ -1,5 +1,7 @@
 import {Name} from './common_types';
 import {ContestType} from './contests';
+import {Item} from './items';
+import {Type} from './pokemon';
 
 export interface Berry {
 	/** The identifier for this resource. */

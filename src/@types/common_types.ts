@@ -1,5 +1,5 @@
 import {EncounterConditionValue, EncounterMethod} from './encounter';
-import {Version, VersionGroup} from './games';
+import {Generation, Version, VersionGroup} from './games';
 import {Language} from './language';
 import {Machine} from './machine';
 
