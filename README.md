@@ -20,11 +20,11 @@ const PokeAPI = require('pokeapi-advanced-wrapper');
 
 # Task List
 
--   [ ] 타입 추가하기
+-   [x] 타입 추가하기
     -   [x] Berries
     -   [x] Contests
     -   [x] Encounters
-    -   [ ] Evolution
+    -   [x] Evolution
     -   [x] Games
     -   [x] Items
     -   [x] Locations
