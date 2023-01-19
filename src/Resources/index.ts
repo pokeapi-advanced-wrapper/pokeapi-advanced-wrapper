@@ -1,6 +1,6 @@
 import URLHandler, {Wrapper as URLHandlerWrapper} from './url-tool';
 import AsyncHandler from '../common-lib/async-tool';
-import fetch from 'node-fetch';
+import Client from '../common-lib/client';
 import type {NamedAPIResource} from '../@types/common_types';
 
 interface NamedAPIResourceList {
@@ -72,9 +72,9 @@ const RequestHandler = (options?: {
 		const request = async () => {
 			const _params = data.options.toString();
 			const _request = () =>
-				fetch(`https://pokeapi.co/api/v2/ability/?${_params}`).then(
-					(res) => res.json() as Promise<NamedAPIResourceList>,
-				);
+				Client<NamedAPIResourceList>({
+					url: `https://pokeapi.co/api/v2/ability/?${_params}`,
+				});
 
 			data.json = await AsyncHandler(_request, {retry: 5});
 
